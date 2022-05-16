@@ -5,5 +5,4 @@ class Food < ActiveRecord::Base
   validates :name, presence: true
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :measurement_unit, presence: true
-  
 end
