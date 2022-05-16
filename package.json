@@ -1,0 +1,29 @@
+{
+  "name": "recipe-app-capstone",
+  "version": "1.0.0",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
+  "main": "./app/views/layouts/application.html.erb",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yothu/recipe-app-capstone.git"
+  },
+  "author": "David Vergaray, Anibal Amoroso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yothu/recipe-app-capstone/issues"
+  },
+  "homepage": "https://github.com/Yothu/recipe-app-capstone#readme",
+  "devDependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0"
+  }
+}
