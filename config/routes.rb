@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get '/users/sign_out', to: 'users/sessions#destroy'
-    root to: "devise/sessions#new"
+    # root to: "devise/sessions#new"
   end
 
   resources   :foods, only: %i[index,create,new,destroy]
