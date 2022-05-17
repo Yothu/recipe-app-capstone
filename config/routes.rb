@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     get '/users/sign_out', to: 'users/sessions#destroy'
   end
 
-  root to: "foods#index"
-
   resources :foods, only: %i[index create new destroy]
   resources :recipes, only: %i[index show create new destroy]
+
+  root "foods#index"
 end
