@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
 
   resources :foods, only: %i[index create new destroy]
-  resources :recipes, only: %i[index show create new destroy]
+  resources :recipes, only: %i[index show create new destroy] do
+    resources :recipe_foods, only: %i[create new destroy]
+  end
 
   root "foods#index"
 end
