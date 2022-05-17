@@ -1,0 +1,11 @@
+<div class="recipe p-3 border container my-1">
+  <div class="row">
+    <div class="col-4">
+      <strong><%= recipe.name %></strong>
+      <%= button_to 'Delete', recipe_path(recipe), method: :delete, class: 'border border-dark border-2 rounded p-1 text-dark text-decoration-none d-flex align-items-center' %>
+    </div>
+    <div class="col-8">
+      <p class="m-0"><%= recipe.description %></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: "#{name}" %>
+<% end -%>
+
+<div>
+  <h2>Create a Recipe!</h2>
+
+  <%= form_with model: @recipe, class: 'd-flex flex-column border border-2 border-dark p-3' do |f| %>
+    <div class="my-2">
+      <%= f.label :name, "Name:" %>
+      <%= f.text_field :name, placeholder: 'Name' %>
+    </div>
+
+    <div class="my-2">
+      <%= f.label :preparation_time, "Preparation time:" %>
+      <%= f.number_field :preparation_time, in: 0..300 ,placeholder: 'Minutes' %>
+    </div>
+
+    <div class="my-2">
+      <%= f.label :cooking_time, "Cooking time:" %>
+      <%= f.number_field :cooking_time, in: 0..300 ,placeholder: 'Minutes' %>
+    </div>
+    <%= f.text_area :description, placeholder: 'Write what this recipe is about!' %>
+    <div class="my-2">
+      <%= f.check_box :public %>
+      <%= f.label :public, "Public Recipe!" %>
+    </div>
+    <%= f.submit "Submit", disable_with: 'Submiting...', class: 'submit-btn black-border' %>
+  <% end %>
+
+  <div class="d-flex justify-content-star my-3">
+    <%= link_to 'Go back', recipes_path, class: 'border border-dark border-2 rounded p-3 text-dark text-decoration-none d-flex align-items-center' %>
+  </div>
+</div>
