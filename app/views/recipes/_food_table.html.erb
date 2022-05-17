@@ -1,0 +1,11 @@
+<tr class="row px-3 mx-0">
+  <td class="col-5"><%= recipe_food.name %></td>
+  <td class="col-2"><%= recipe_food.quantity_measure %></td>
+  <td class="col-2"><%= recipe_food.value%></td>
+  <td class="col-3">
+    <% if recipe_food.recipe.user == current_user%>
+    <!-- modify link -->
+    <%= button_to 'Delete', recipe_recipe_food_path(recipe_food), method: :delete, class: 'border border-dark border-2 rounded p-1 text-dark text-decoration-none d-flex align-items-center' %>
+    <% end %>
+  </td>
+</tr>
