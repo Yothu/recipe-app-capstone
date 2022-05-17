@@ -24,7 +24,11 @@
         <li class="nav-item">
           <%= link_to "Sign In", new_user_session_path, class: 'nav-link' %>
         </li>
+
       <% end %>
+      <li class="nav-item">
+        <%= link_to "Public Recipes", public_recipes_path, method: :get, class: 'nav-link' %>
+      </li>
     </ul>
   </div>
 </nav>
