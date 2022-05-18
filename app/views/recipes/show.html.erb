@@ -7,8 +7,10 @@
         <%= @recipe.preparation_time%>
       </div>
       <% if @recipe.user == @current_user%>
-        Owner
-        <!-- public button -->
+        <%= form_for @recipe, :method => :PUT do |f| %>
+          <%= f.submit "public", class: 'btn btn-success text-white' if @recipe.public %>
+          <%= f.submit "private" , class: 'btn btn-danger text-white' unless @recipe.public %>
+        <% end %>
       <% end %>
     </div>
     <div class="my-2">
@@ -19,9 +21,7 @@
       <%= @recipe.description%>
     </div>
     <div class="d-flex justify-content-between">
-
       <%= link_to 'Generate shopping list', shopping_list_index_path , class: 'btn btn-success text-white'%>
-
       <% if @recipe.user == @current_user%>
         <%= link_to 'Add Ingredient!', new_recipe_recipe_food_path(@recipe), class: 'btn btn-success text-white' %>
       <% end %>
