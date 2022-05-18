@@ -20,10 +20,10 @@
     </div>
     <div class="d-flex justify-content-between">
 
-      <%= link_to 'Generate shopping list', shopping_list_index_path , class: 'btn btn-success text-dark'%>
+      <%= link_to 'Generate shopping list', shopping_list_index_path , class: 'btn btn-success text-white'%>
 
       <% if @recipe.user == @current_user%>
-        <%= link_to 'Add Ingredient!', new_recipe_recipe_food_path(@recipe), class: 'btn btn-success text-dark' %>
+        <%= link_to 'Add Ingredient!', new_recipe_recipe_food_path(@recipe), class: 'btn btn-success text-white' %>
       <% end %>
     </div>
   </div>
