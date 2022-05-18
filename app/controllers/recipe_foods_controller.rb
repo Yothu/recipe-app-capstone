@@ -7,7 +7,7 @@ class RecipeFoodsController < ApplicationController
   def new
     @recipe_food = RecipeFood.new
     @foods = Food.where(user_id: current_user)
-     @recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params[:recipe_id])
 
     redirect_to recipe_path(@recipe) unless @recipe.user == current_user
   end

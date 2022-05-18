@@ -20,7 +20,6 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    puts params.inspect
     Food.find(params[:id]).destroy
     redirect_to foods_path
   end

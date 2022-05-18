@@ -7,20 +7,15 @@
       <th scope="col">Food</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
-    <% @foods.each do |food|%>
+    <% @foods.each do |f|%>
     <tr>
+      <td><%= f.name %></td>
+      <td><%= f.quantity_sum %> <%= f.measurement_unit %></td>
+      <td>$<%=f.price * f.quantity_sum%></td>
 
-      <th scope="row">1</th>
-      <td><%= food.name %></td>
-      <td><%= food.measurement_unit %></td>
-      <td><%=food.price%></td>
-      <td>
-    <%= button_to "Delete",food_path(food), method: :delete ,class:"btn btn-warning"%>
-    </td>
     </tr>
 <%end%>
   </tbody>

@@ -19,8 +19,9 @@
       <%= @recipe.description%>
     </div>
     <div class="d-flex justify-content-between">
-      Generate shopping list
-      <!-- shopping list button -->
+
+      <%= link_to 'Generate shopping list', shopping_list_index_path , class: 'border border-dark border-2 rounded p-3 text-dark text-decoration-none d-flex align-items-center'%>
+
       <% if @recipe.user == @current_user%>
         <%= link_to 'Add Ingredient!', new_recipe_recipe_food_path(@recipe), class: 'border border-dark border-2 rounded p-2 text-dark text-decoration-none d-flex align-items-center' %>
       <% end %>
