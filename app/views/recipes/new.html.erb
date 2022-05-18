@@ -26,10 +26,10 @@
       <%= f.check_box :public %>
       <%= f.label :public, "Public Recipe!" %>
     </div>
-    <%= f.submit "Submit", disable_with: 'Submiting...', class: 'submit-btn black-border' %>
+    <%= f.submit "Submit", disable_with: 'Submiting...', class:'btn btn-success text-dark' %>
   <% end %>
 
   <div class="d-flex justify-content-star my-3">
-    <%= link_to 'Go back', recipes_path, class: 'border border-dark border-2 rounded p-3 text-dark text-decoration-none d-flex align-items-center' %>
+    <%= link_to 'Go back', recipes_path, class: 'link-secondary text-decoration-none' %>
   </div>
 </div>

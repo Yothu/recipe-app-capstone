@@ -5,7 +5,7 @@
   <div class="d-flex justify-content-between">
     <h2>Food list</h2>
     <% if signed_in?%>
-      <%= button_to 'Add food', new_food_path, method: :get, class:"btn btn-danger"%>
+      <%= button_to 'Add food', new_food_path, method: :get, class:"btn text-dark btn-success"%>
     <%end%>
   </div>
   <table class="table border border-2 border-dark rounded p-3">
@@ -25,7 +25,7 @@
           <td><%= food.price%></td>
           <td>
             <% if @current_user == food.user%>
-            <%= button_to "Delete",food_path(food), method: :delete ,class:"btn btn-warning"%>
+            <%= button_to "Delete",food_path(food), method: :delete ,class:"btn text-dark btn-danger btn-sm"%>
             <% end %>
           </td>
         </tr>
