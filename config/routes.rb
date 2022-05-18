@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   devise_scope :user do
+    root "foods#index"
     get '/users/sign_out', to: 'users/sessions#destroy'
   end
 
@@ -13,5 +14,4 @@ Rails.application.routes.draw do
   resources :public_recipes, only: %i[index]
   resources :shopping_list, only: %i[index]
 
-  root "foods#index"
 end

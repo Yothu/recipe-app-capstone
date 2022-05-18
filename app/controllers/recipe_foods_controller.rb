@@ -1,16 +1,15 @@
 class RecipeFoodsController < ApplicationController
   def destroy
-    puts params.inspect
     RecipeFood.find(params[:id]).destroy
     redirect_to recipe_path(Recipe.find(params[:recipe_id]))
   end
 
   def new
-    @recipe = Recipe.find(params[:recipe_id])
-    redirect_to recipe_path(@recipe) unless @recipe.user == current_user
     @recipe_food = RecipeFood.new
+    @foods = Food.where(user_id: current_user)
+     @recipe = Recipe.find(params[:recipe_id])
 
-    @foods = Food.all
+    redirect_to recipe_path(@recipe) unless @recipe.user == current_user
   end
 
   def create
@@ -23,7 +22,7 @@ class RecipeFoodsController < ApplicationController
       flash[:success] = 'Ingredient was added!'
     else
       redirect_to new_recipe_recipe_food_path
-      flash[:error] = 'ERROR! Ingredient was not added.'
+      flash[:error] = 'ERROR! Ingredient already added.'
     end
   end
 
