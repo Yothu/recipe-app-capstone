@@ -5,9 +5,9 @@
 <div class="recipe-container my-3 p-3 border border-dark rounded border-2">
   <div class="d-flex justify-content-between mb-3">
     <h2 class="mb-3">My Recipes</h2>
-    <%= link_to 'Create Recipe', new_recipe_path, class: 'border border-dark border-2 rounded p-3 text-dark text-decoration-none d-flex align-items-center' %>
+    <%= link_to 'Create Recipe', new_recipe_path, class: 'btn text-white  d-flex align-items-center btn-success' %>
   </div>
   <% @recipes.each do |recipe| %>
     <%= render 'recipe', recipe: recipe %>
-  <% end %>  
+  <% end %>
 </div>

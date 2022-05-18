@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="nav-item">
-    <%=image_tag("logo", size: "80x80" ) %>
+    <%=image_tag("logo", size: "98x98" ) %>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -12,28 +12,28 @@
           </li>
 
           <li class="nav-item">
-            <%= link_to "My Foods" , foods_path, method: :get, class: 'nav-link' %>
+            <%= link_to "My Foods" , foods_path, method: :get, class:"nav-link link-secondary" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "My Recipes" , recipes_path, method: :get, class: 'nav-link' %>
+            <%= link_to "My Recipes" , recipes_path, method: :get, class: "nav-link link-secondary" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "Public Recipes" , public_recipes_path, method: :get, class: 'nav-link' %>
+            <%= link_to "Public Recipes" , public_recipes_path, method: :get, class:"nav-link link-secondary" %>
           </li>
         </div>
 
         <li class="nav-item">
-          <%= link_to "Sign Out" , destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          <%= link_to "Sign Out" , destroy_user_session_path, method: :delete, class:"nav-link link-secondary" %>
         </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Sign Up" , new_user_registration_path, class: 'nav-link' %>
+            <%= link_to "Sign Up" , new_user_registration_path, class:"nav-link link-secondary" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "Sign In" , new_user_session_path, class: 'nav-link' %>
+            <%= link_to "Sign In" , new_user_session_path, class:"nav-link link-secondary" %>
           </li>
           <% end %>
     </ul>

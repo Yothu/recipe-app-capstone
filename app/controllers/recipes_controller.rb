@@ -28,6 +28,13 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
+  def update
+    recipe = Recipe.find(params[:id])
+    recipe.toggle(:public)
+    recipe.save
+    redirect_to recipe_path(recipe)
+  end
+
   private
 
   def recipe_params
