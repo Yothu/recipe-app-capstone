@@ -1,6 +1,7 @@
 class FoodsController < ApplicationController
   def index
     @foods = Food.all
+    @current_user = current_user
   end
 
   def new
@@ -15,7 +16,7 @@ class FoodsController < ApplicationController
     else
       flash[:notice] = 'Could not add food'
     end
-    redirect_to food_path(current_user.id)
+    redirect_to foods_path
   end
 
   def destroy
