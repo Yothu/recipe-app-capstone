@@ -7,8 +7,10 @@
         <%= @recipe.preparation_time%>
       </div>
       <% if @recipe.user == @current_user%>
-        Owner
-        <!-- public button -->
+        <%= form_for @recipe, :method => :PUT do |f| %>
+          <%= f.submit "public" if @recipe.public %>
+          <%= f.submit "private" unless @recipe.public %>
+        <% end %>
       <% end %>
     </div>
     <div class="my-2">
