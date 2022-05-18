@@ -10,13 +10,15 @@
 
 <div class="d-flex justify-content-evenly">
 <div >
-  <p> Amount of food items to buy:</p>
+  <p> Amount of food items to buy:  <%= @total_items%></p>
 
 </div>
 <div >
 
-  <p>Total value of food needed:</p>
+  <p>Total value of food needed: <%= @total_value%></p>
 </div>
 
 </div>
-</>
+
+<%= render "foods"%>
+<main/>
