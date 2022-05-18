@@ -2,9 +2,9 @@
   <td class="col-5"><%= recipe_food.name %></td>
   <td class="col-2"><%= recipe_food.quantity_measure %></td>
   <td class="col-2"><%= recipe_food.value %></td>
-  <td class="col-3">
+  <td class="col-3 d-flex justify-content-around">
     <% if recipe_food.recipe.user == current_user%>
-    <!-- modify link -->
+    <button class="btn btn-warning ">Modify</button>
     <%= button_to 'Delete', recipe_recipe_food_path(id: recipe_food.id, recipe_id: recipe_food.recipe_id), method: :delete, class: 'border border-dark border-2 rounded p-1 text-dark text-decoration-none d-flex align-items-center' %>
     <% end %>
   </td>
