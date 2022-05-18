@@ -8,7 +8,7 @@
   <li class=" list-group-item border border-dark">
     <div class="row">
     <div class="col"> <div class="fs-3"><%= link_to recipe.name, recipe_path(recipe),method: :get %></div>
-    <div> by: <%= recipe.user.email%></div>
+    <div> by: <%= recipe.user.name%></div>
     </div>
     <div class="col">
       <p>Total food items: <%= recipe.total_food_items%></p>

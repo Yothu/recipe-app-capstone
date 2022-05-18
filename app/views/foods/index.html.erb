@@ -1,7 +1,7 @@
 
 
 <% if signed_in?%>
-<%= link_to 'Add food', new_food_path, class:"btn btn-danger"%>
+<%= button_to 'Add food', new_food_path, method: :get, class:"btn btn-danger"%>
 <%end%>
 <% flash.each do |type, msg| %>
 <div class="alert alert-info">
