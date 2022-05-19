@@ -21,6 +21,7 @@
       <%= f.label :cooking_time, "Cooking time:" %>
       <%= f.number_field :cooking_time, in: 0..300 ,placeholder: 'Minutes' %>
     </div>
+    <%= f.label :description, "Description:" %>
     <%= f.text_area :description, placeholder: 'Write what this recipe is about!' %>
     <div class="my-2">
       <%= f.check_box :public %>

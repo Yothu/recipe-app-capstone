@@ -8,18 +8,17 @@ RSpec.describe 'Recipe', type: :system do
       Food.destroy_all
       RecipeFood.destroy_all
 
-      User.create(id: 1111,name: 'user1', password: '111111', email: 'u@u')
-      User.create(id: 1112,name: 'user2', password: '123123', email: 'u@i')
+      User.create(id: 1111, name: 'user1', password: '111111', email: 'u@u')
+      User.create(id: 1112, name: 'user2', password: '123123', email: 'u@i')
 
       @r1 = Recipe.create(id: 2111, user_id: 1111, name: 'recipe1', preparation_time: 10, cooking_time: 5,
-                            description: 'This is the desc of recipe 1', public: true)
+                          description: 'This is the desc of recipe 1', public: true)
 
       Recipe.create(id: 2112, user_id: 1111, name: 'recipe2', preparation_time: 20, cooking_time: 10,
-                            description: 'This is the desc of recipe 2', public: false)
+                    description: 'This is the desc of recipe 2', public: false)
 
       @f1 = Food.create(id: 3111, user_id: 1111, name: 'food1', measurement_unit: 'kilos', price: 1)
       Food.create(id: 3112, user_id: 1112, name: 'food2', measurement_unit: 'grams', price: 2)
-
 
       RecipeFood.create(quantity: 4, food_id: 3111, recipe_id: 2111)
 
@@ -61,7 +60,6 @@ RSpec.describe 'Recipe', type: :system do
 
     it 'should redirect to add ingredients page when press a button' do
       click_link 'Add Ingredient!'
-      # recipe_id = @r1.id
       expect(page.current_path).to have_content("/recipes/#{@r1.id}/recipe_foods/new")
     end
 
