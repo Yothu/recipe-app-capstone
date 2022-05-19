@@ -10,7 +10,7 @@
     <% @foods.each do |f|%>
       <tr>
         <td><%= f.name %></td>
-        <td><%= f.quantity_sum %><%= f.measurement_unit %></td>
+        <td><%= f.quantity_sum %> <%= f.measurement_unit %></td>
         <td>$<%=f.price * f.quantity_sum%></td>
       </tr>
     <%end%>
