@@ -1,0 +1,11 @@
+<div class="recipe p-3 border container my-1">
+  <div class="row">
+    <div class="col-4">
+      <%= link_to recipe.name, recipe_path(recipe), method: :get, class: "link-secondary" %>
+      <%= button_to 'Delete', recipe_path(recipe), method: :delete, class: 'btn text-white btn-danger mt-3' %>
+    </div>
+    <div class="col-8">
+      <p class="m-0"><%= recipe.description %></p>
+    </div>
+  </div>
+</div>

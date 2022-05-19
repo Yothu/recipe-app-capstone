@@ -1,0 +1,35 @@
+
+
+
+<div class="border border-2 border-dark rounded p-3 my-3">
+  <div class="d-flex justify-content-between">
+    <h2>Food list</h2>
+    <% if signed_in?%>
+      <%= button_to 'Add food', new_food_path, method: :get, class:"btn text-white btn-success"%>
+    <%end%>
+  </div>
+  <table class="table border border-2 border-dark rounded p-3">
+    <thead>
+      <tr>
+        <th class="col-3">Name</th>
+        <th class="col-3">Measurement Unit</th>
+        <th class="col-2">Price</th>
+        <th class="col-4">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food|%>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= food.price%></td>
+          <td>
+            <% if @current_user == food.user%>
+            <%= button_to "Delete",food_path(food), method: :delete ,class:"btn text-white btn-danger btn-sm"%>
+            <% end %>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>

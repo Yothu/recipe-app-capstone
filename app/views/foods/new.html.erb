@@ -1,0 +1,19 @@
+<h1> Add Food!</h1>
+<%= form_with model: @food, url: foods_path do |f| %>
+  <div class="form-group">
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name, class:"form-control" %>
+  </div>
+
+  <div>
+    <%= f.label :measurement_unit, "Measurement Unit" %>
+    <%= f.text_field :measurement_unit, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= f.label :price, "Price" %>
+    <%= f.number_field :price, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Add" ,class:"btn btn-success text-white btn-md mt-3"%>
+<% end %>

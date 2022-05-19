@@ -1,0 +1,9 @@
+<%= form_with model: @recipe_food, url: recipe_recipe_foods_path do |f| %>
+  <tr class="row px-3 mx-0">
+    <%= hidden_field_tag 'food_id', food.id %>
+    <td class="col-4"><%= food.name %></td>
+    <td class="col-2"><%= food.measurement_unit %></td>
+    <td class="col-2 me-3"><%= f.number_field :quantity, class: 'w-100' %></td>
+    <td class="col-3 p-0"><%= f.submit 'Add ingredient', class: 'p-1 btn btn-success text-white' %></td>
+  </tr>
+<% end %>

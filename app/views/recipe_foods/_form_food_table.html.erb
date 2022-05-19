@@ -1,0 +1,15 @@
+<% if foods.length != 0 %>
+<table class="foods-table container border border-dark border-2">
+  <tr class="row px-3 label-row mx-0">
+    <th class="col-4">Food</th>
+    <th class="col-2">Measurement Unit</th>
+    <th class="col-2">Quantity</th>
+    <th class="col-4">Action</th>
+  </tr>
+  <% foods.each do |food| %>
+    <%= render 'food_row', food: food, recipe_food: recipe_food %>
+  <% end %>
+</table>
+<% else %>
+<span>You have not added any food!</span>
+<% end %>

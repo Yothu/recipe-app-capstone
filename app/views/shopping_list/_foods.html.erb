@@ -1,0 +1,23 @@
+<% if @foods.length != 0%>
+<table class="table border border-2 border-dark p-3 my-3">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |f|%>
+      <tr>
+        <td><%= f.name %></td>
+        <td><%= f.quantity_sum %> <%= f.measurement_unit %></td>
+        <td>$<%=f.price * f.quantity_sum%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+<% else %>
+<span>No ingredients in any of your recipes!</span>
+<% end %>
+

@@ -1,0 +1,7 @@
+table > tbody > tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+.label-row {
+  background-color: #c1c1c1;
+}

@@ -1,0 +1,15 @@
+<% if recipe_foods.length != 0 %>
+<table class="recipe-foods-table container border border-dark border-2">
+  <tr class="row px-3 label-row mx-0">
+    <th class="col-5">Food</th>
+    <th class="col-2">Quantity</th>
+    <th class="col-2">Value</th>
+    <th class="col-3">Actions</th>
+  </tr>
+  <% recipe_foods.each do |recipe_food| %>
+    <%= render 'food_table', recipe_food: recipe_food, current_user: current_user %>
+  <% end %>
+</table>
+<% else %>
+<span>No Ingredients added!</span>
+<% end %>

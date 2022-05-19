@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="d-flex justify-content-center">Public Recipes</h1>
+
+  <ul class="my-3">
+    <% @recipes.each do |recipe|%>
+      <li class=" list-group-item border border-dark my-4">
+        <div class="row">
+          <div class="col">
+            <div class="fs-3 mb-3 ">
+              <%= link_to recipe.name, recipe_path(recipe),method: :get, class:"link-secondary" %>
+            </div>
+            <div class="fs-6"> by: <%= recipe.user.name%></div>
+          </div>
+          <div class="col">
+            <p class="fs-6 mt-3">Total food items: <%= recipe.total_food_items%></p>
+            <p class="fs-6 pb-1">Total price: <%= recipe.total_price%></p>
+          </div>
+        </div>
+      </li>
+    <%end%>
+  </ul>
+</div>

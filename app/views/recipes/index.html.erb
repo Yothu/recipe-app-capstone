@@ -1,0 +1,17 @@
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: "#{name}" %>
+<% end -%>
+
+<div class="recipe-container my-3 p-3 border border-dark rounded border-2">
+  <div class="d-flex justify-content-between mb-3">
+    <h2 class="mb-3">My Recipes</h2>
+    <%= link_to 'Create Recipe', new_recipe_path, class: 'btn text-white  d-flex align-items-center btn-success' %>
+  </div>
+  <% if @recipes.length != 0%>
+    <% @recipes.each do |recipe| %>
+      <%= render 'recipe', recipe: recipe %>
+    <% end %>
+  <% else %>
+    <span>No recipes added!</span>
+  <% end %>
+</div>
