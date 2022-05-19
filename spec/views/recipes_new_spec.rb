@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Recipe', type: :system do
-  describe 'Show' do
+  describe 'New' do
     before(:each) do
       User.destroy_all
       Recipe.destroy_all
